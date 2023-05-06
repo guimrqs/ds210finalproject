@@ -3,7 +3,7 @@ mod data;
 use data::{build_graph, compute_degree_centrality};
 
 fn main() {
-    let dataset_path = "/Users/guimarques/Desktop/data";
+    let dataset_path = "/Users/guimarques/Desktop/data"; // FOR GRADER: Change path when you download dataset
     let graph = build_graph(dataset_path);
     println!("Graph constructed with {} nodes and {} edges.", graph.node_count(), graph.edge_count());
 
@@ -26,16 +26,12 @@ fn main() {
     let degree_centrality = compute_degree_centrality(&graph);
     println!("Degree centrality for the first 10 vertices:");
     data::print_first_n_vertices_with_centrality(&graph, &degree_centrality, 10);
-
-    // Step 4
     
-    // Densest subgraph
     let max_density = data::charikar_densest_subgraph(&graph);
     println!("The density of the densest subgraph is {:.2}.", max_density);
     println!("Densest subgraph calculation completed.");
 
-    // Single-linkage clustering
-    let num_clusters = 3; // You can choose any number of clusters.
+    let num_clusters = 3;
     let clusters = data::single_linkage_clustering(&graph, num_clusters);
     println!("Clusters using single-linkage clustering:");
 

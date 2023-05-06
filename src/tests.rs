@@ -3,7 +3,7 @@ use super::data::{build_graph, shortest_path, Vertex};
 
 #[test]
 fn test_shortest_path() {
-    let dataset_path = "/Users/guimarques/Desktop/data";
+    let dataset_path = "/Users/guimarques/Desktop/data"; // FOR GRADER: Change path when you download dataset
     let graph = build_graph(dataset_path);
 
     let start_id = 16287561;

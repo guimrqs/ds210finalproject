@@ -6,9 +6,7 @@ use std::collections::HashMap;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
-// Step 4
 use std::collections::HashSet;
-
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct Vertex {
@@ -93,8 +91,6 @@ pub fn print_first_n_vertices_with_centrality(
         println!("Vertex ID: {}, Centrality: {:.6}", graph[ni].id, centrality[i]);
     }
 }
-
-// Step 4
 
 pub fn charikar_densest_subgraph(graph: &Graph<Vertex, ()>) -> f64 {
     let mut max_density = 0.0;
@@ -181,7 +177,7 @@ mod tests {
 
     #[test]
     fn test_shortest_path() {
-        let test_data_path = "/Users/guimarques/Desktop/data";
+        let test_data_path = "/Users/guimarques/Desktop/data"; // FOR GRADER: Change path when you download dataset
         let graph = build_graph(test_data_path);
         let start_id = 16287561; 
         let end_id = 77007853; 
